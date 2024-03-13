@@ -1,23 +1,54 @@
 {
   "name": "my-dnd-stuff",
   "version": "1.0.0",
-  "description": "My D&D Stuff",
-  "main": "src/index.ts",
+  "description": "My D&D stuff",
+  "main": "./src/index.tsx",
   "scripts": {
-    "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
-    "lint": "eslint src/**/*.ts",
-    "prestart": "npm run build",
-    "start": "node dist/index.js",
+    "dev": "webpack-dev-server",
+    "lint": "eslint src/**/*.{ts,tsx}",
     "prebuild": "npm run lint",
-    "build": "tsc"
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwkeay/my-dnd-stuff.git"
   },
   "author": "Michael Keay",
-  "license": "ISC",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mwkeay/my-dnd-stuff/issues"
+  },
+  "homepage": "https://github.com/mwkeay/my-dnd-stuff#readme",
   "devDependencies": {
-    "@types/node": "^20.11.27",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "eslint": "^8.57.0",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.4.2"
+    "@babel/core": "^7.22.11",
+    "@babel/eslint-parser": "^7.22.11",
+    "@babel/plugin-transform-runtime": "^7.22.10",
+    "@babel/preset-env": "^7.22.14",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.11",
+    "@babel/runtime": "^7.22.11",
+    "@types/node": "^20.5.9",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.48.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

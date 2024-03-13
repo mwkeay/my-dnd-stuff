@@ -5,7 +5,9 @@ module.exports = {
 	},
 	"extends": [
 		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react/jsx-runtime"
 	],
 	"overrides": [
 		{
@@ -18,7 +20,16 @@ module.exports = {
 			"parserOptions": {
 				"sourceType": "script"
 			}
-		}
+		},
+		{
+			"files": ["webpack.config.js"],
+			"rules": {
+				// Stop eslint recommending import instead of require in webpack.config.js
+				"@typescript-eslint/no-var-requires": "off",
+				// Stop eslint flagging __dirname as undefined
+				"no-undef": "off"
+			}
+		},
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
@@ -26,7 +37,8 @@ module.exports = {
 		"sourceType": "module"
 	},
 	"plugins": [
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"react"
 	],
 	"rules": {
 		"quotes": [
@@ -37,5 +49,10 @@ module.exports = {
 			"warn",
 			"always"
 		]
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
 	}
 };
