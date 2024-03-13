@@ -1,0 +1,23 @@
+{
+  "name": "my-dnd-stuff",
+  "version": "1.0.0",
+  "description": "My D&D Stuff",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+    "lint": "eslint src/**/*.ts",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "prebuild": "npm run lint",
+    "build": "tsc"
+  },
+  "author": "Michael Keay",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.27",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "eslint": "^8.57.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.2"
+  }
+}
